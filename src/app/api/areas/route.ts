@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { Area } from '@/entities/Area';
 import { AppDataSource } from '@/lib/data-source';
+import { Area } from '@/entities/Area';
 
 export async function GET() {
   try {
@@ -23,8 +23,8 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { nome, descricao } = body;
+    const data = await request.json();
+    const { nome, descricao } = data;
 
     if (!nome) {
       return NextResponse.json(
@@ -40,12 +40,11 @@ export async function POST(request: Request) {
     const areaRepository = AppDataSource.getRepository(Area);
     const area = areaRepository.create({
       nome,
-      descricao
+      descricao: descricao || ''
     });
 
-    await areaRepository.save(area);
-
-    return NextResponse.json(area, { status: 201 });
+    const savedArea = await areaRepository.save(area);
+    return NextResponse.json(savedArea, { status: 201 });
   } catch (error) {
     console.error('Erro ao criar área:', error);
     return NextResponse.json(
