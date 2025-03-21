@@ -1,0 +1,62 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.processos {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+   /* Linha indicando hierarquia */
+}
+
+.processo {
+  position: relative;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.subprocessos {
+  margin-left: 30px;
+  padding-left: 20px;
+  border-left: 2px solid #ccc; /* Linha conectando subprocessos */
+}
+
+.subprocesso {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.subprocesso::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: #ccc; /* Linha horizontal conectando ao pai */
+}
+
+.subprocesso .nodeTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.subprocesso .nodeDescription {
+  font-size: 0.85rem;
+  color: #666;
+}

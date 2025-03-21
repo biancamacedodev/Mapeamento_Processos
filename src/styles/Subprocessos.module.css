@@ -1,0 +1,160 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.formContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton {
+  background-color: #0070f3;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #0051cc;
+}
+
+.cancelButton {
+  background-color: #e0e0e0;
+  color: #666;
+}
+
+.cancelButton:hover {
+  background-color: #d0d0d0;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  color: #333;
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+.cardContent {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.editButton {
+  background-color: #0070f3;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #0051cc;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #bb2d3b;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: #28a745;
+  background-color: #d4edda;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 

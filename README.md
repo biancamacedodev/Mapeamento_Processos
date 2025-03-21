@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mapeamento de Processos
 
-## Getting Started
+Sistema para mapeamento e gerenciamento de processos empresariais, desenvolvido com Next.js 13+, TypeScript e MySQL.
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
 
+- **Frontend:**
+  - Next.js 13+ (App Router)
+  - TypeScript
+  - CSS Modules
+  - React Hooks
+
+- **Backend:**
+  - Next.js API Routes
+  - TypeORM
+  - MySQL
+
+## 📋 Pré-requisitos
+Antes de iniciar o projeto, verifique se você tem as seguintes dependências instaladas:
+
+- [Node.js](https://nodejs.org/) 
+- [MySQL](https://www.mysql.com/) 
+- npm ou yarn
+
+## 🛠️ Configuração do Ambiente
+
+1. Clone o repositório:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [URL_DO_REPOSITÓRIO]
+cd mapeamento-processos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Estrutura do Projeto
 
-## Learn More
+```
+src/
+├── app/                    # Diretório principal do Next.js 13+
+│   ├── api/               # Rotas da API
+│   │   ├── areas/        # Endpoints para áreas
+│   │   ├── processos/    # Endpoints para processos
+│   │   └── subprocessos/ # Endpoints para subprocessos
+│   ├── areas/            # Página de áreas
+│   ├── processos/        # Página de processos
+│   └── subprocessos/     # Página de subprocessos
+├── entities/             # Entidades do TypeORM
+├── lib/                  # Configurações e utilitários
+└── styles/              # Arquivos CSS
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Criar o Banco de Dados
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Primeiro, crie o banco de dados no MySQL executando o seguinte comando:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sql
+CREATE DATABASE mapeamento_processos;
 
-## Deploy on Vercel
+## 🗄️ Modelo de Dados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Área
+- Representa uma área da empresa
+- Campos:
+  - id: identificador único
+  - nome: nome da área
+  - descricao: descrição opcional da área
+  - processos: relação com processos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Processo
+- Representa um processo dentro de uma área
+- Campos:
+  - id: identificador único
+  - nome: nome do processo
+  - descricao: descrição do processo
+  - areaId: referência à área
+  - subprocessos: relação com subprocessos
+
+### Subprocesso
+- Representa um subprocesso dentro de um processo
+- Campos:
+  - id: identificador único
+  - nome: nome do subprocesso
+  - descricao: descrição do subprocesso
+  - processoId: referência ao processo
+  - subprocessoPaiId: referência opcional ao subprocesso pai
+
+## 🔄 Funcionalidades
+
+### Gestão de Áreas
+- Listagem de áreas
+- Criação de novas áreas
+- Edição de áreas existentes
+- Exclusão de áreas
+
+### Gestão de Processos
+- Listagem de processos por área
+- Criação de novos processos
+- Edição de processos existentes
+- Exclusão de processos
+
+### Gestão de Subprocessos
+- Listagem de subprocessos por processo
+- Criação de novos subprocessos
+- Edição de subprocessos existentes
+- Exclusão de subprocessos
+
+## 🔒 Segurança
+
+- Validação de dados no servidor
+- Sanitização de inputs
+- Tratamento de erros
+- Confirmação para ações destrutivas
+
+## 🎨 Interface
+
+- Design responsivo
+- Feedback visual para ações
+- Formulários com validação
+- Confirmação antes de excluir
+- Loading states
+- Mensagens de erro e sucesso
+
+## 📝 API Endpoints
+
+### Áreas
+- `GET /api/areas` - Lista todas as áreas
+- `POST /api/areas` - Cria uma nova área
+- `PUT /api/areas/[id]` - Atualiza uma área
+- `DELETE /api/areas/[id]` - Remove uma área
+
+### Processos
+- `GET /api/processos` - Lista todos os processos
+- `POST /api/processos` - Cria um novo processo
+- `PUT /api/processos/[id]` - Atualiza um processo
+- `DELETE /api/processos/[id]` - Remove um processo
+
+### Subprocessos
+- `GET /api/subprocessos` - Lista todos os subprocessos
+- `POST /api/subprocessos` - Cria um novo subprocesso
+- `PUT /api/subprocessos/[id]` - Atualiza um subprocesso
+- `DELETE /api/subprocessos/[id] - Remove um subprocesso
+
+## 🚀 Deploy
+
+Para fazer deploy do projeto:
+
+1. Configure as variáveis de ambiente no servidor
+2. Execute o build:
+```bash
+npm run build
+```
+3. Inicie o servidor de produção:
+```bash
+npm start
+```
+
+## Arquitetura Geral do sistema usando Mermaid
+https://www.mermaidchart.com/raw/9d80f1d0-f4d2-4a2a-90eb-ddaad0f64981?theme=light&version=v0.1&format=svg
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
