@@ -148,20 +148,6 @@ CREATE DATABASE mapeamento_processos;
 - `PUT /api/subprocessos/[id]` - Atualiza um subprocesso
 - `DELETE /api/subprocessos/[id] - Remove um subprocesso
 
-## 🚀 Deploy
-
-Para fazer deploy do projeto:
-
-1. Configure as variáveis de ambiente no servidor
-2. Execute o build:
-```bash
-npm run build
-```
-3. Inicie o servidor de produção:
-```bash
-npm start
-```
-
 ## Arquitetura Geral do sistema usando Mermaid
 https://www.mermaidchart.com/raw/9d80f1d0-f4d2-4a2a-90eb-ddaad0f64981?theme=light&version=v0.1&format=svg
 
